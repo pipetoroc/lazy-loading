@@ -35,8 +35,8 @@ async function loadPicture (id) {
 
   const img = document.createElement('img');
   img.className = 'mx-auto'
-  img.width = '320'
-  img.src = data.urls.regular;
+  img.width = '400'
+  img.dataset.src = data.urls.regular;
 
   figure.appendChild(img);
   mountNode.appendChild(figure);
