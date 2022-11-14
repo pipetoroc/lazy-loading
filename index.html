@@ -13,9 +13,15 @@
       type="text/css"
       href="/_dist_/index.css"
     />
-    <title>Snowpack & Tailwind App</title>
+    <title>Lazy Loading</title>
   </head>
   <body>
+    <header
+      class="w-full h-72 bg-no-repeat bg-cover bg-center"
+      style="
+        background-image: url(https://images.pexels.com/photos/569098/pexels-photo-569098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+      "
+    ></header>
     <div class="py-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <p
@@ -28,7 +34,7 @@
             uppercase
           "
         >
-          Snowpack
+          DOM Manipulation
         </p>
         <h3
           class="
@@ -42,10 +48,23 @@
             sm:text-4xl sm:leading-10
           "
         >
-          Tailwind template
+          Amazing Photos!
         </h3>
-        <div id="imagenes">
-          <button class="rounded-full bg-indigo-500 p-3 text-white"> Add a New photo </button>
+        <p class="text-justify">
+          This is a landing page where you can add different photos to enjoy and
+          admire the creativity of people really talented around the world.
+        </p>
+        <p class="mb-8 text-justify">
+          In this landing page, it is implemented lazy loading to a better
+          experience and fluency.
+        </p>
+        <button id="addButton" class="rounded-full bg-indigo-500 p-3 text-white">
+          Add a New photo
+        </button>
+        <button id="deleteButton" class="rounded-full p-3 text-indigo-500 border-indigo-500 border-solid border-2" >
+          Clean the screen
+        </button>
+        <div id="imagenes" class="flex flex-wrap justify-evenly w-full">
         </div>
       </div>
     </div>

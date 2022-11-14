@@ -21,7 +21,7 @@ const URL_API = 'https://api.unsplash.com/photos/random?client_id=788yWKwO-wwl6Z
 //       })
 //     });
 
-const mountNode = document.getElementById('imagenes');
+let mountNode = document.getElementById('imagenes');
 
 async function loadPicture (id) {
   const response = await fetch(URL_API, {
@@ -31,10 +31,10 @@ async function loadPicture (id) {
   console.log(data)
 
   const figure = document.createElement('figure');
-  figure.className = 'p-4 mt-6'
+  figure.className = 'p-4 mt-6 max-w-md'; 
 
   const img = document.createElement('img');
-  img.className = 'mx-auto'
+  img.className = 'bg-gray-300 mx-auto'
   img.width = '400'
   img.dataset.src = data.urls.regular;
 
@@ -43,5 +43,12 @@ async function loadPicture (id) {
   registerImage(figure)
 }
 
-const addImage = document.querySelector('button');
-addImage.addEventListener('click', loadPicture);
+function cleanScreen () {
+  mountNode.innerHTML = '';
+}
+
+const addButton = document.querySelector('#addButton');
+addButton.addEventListener('click', loadPicture);
+
+const deleteButton = document.querySelector('#deleteButton');
+deleteButton.addEventListener('click', cleanScreen);
